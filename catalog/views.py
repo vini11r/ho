@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 
 def home(requests):
-    return render(requests, 'home.html')
+    return render(requests, "home.html")
 
 
 def contacts(requests):
-    return render(requests, 'contacts.html')
+    return render(requests, "contacts.html")

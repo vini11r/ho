@@ -1,0 +1,80 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "помидор",
+      "description": "зеленый и не вкусный",
+      "preview": "",
+      "category": 2,
+      "price": 1.5,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "морковь",
+      "description": "красная и твердая",
+      "preview": "",
+      "category": 2,
+      "price": 2.0,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "картошка",
+      "description": "с глазками",
+      "preview": "",
+      "category": 2,
+      "price": 3.0,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "яблоки",
+      "description": "кислые",
+      "preview": "",
+      "category": 1,
+      "price": 3.0,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "виноград",
+      "description": "с косточками",
+      "preview": "",
+      "category": 1,
+      "price": 3.6,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "груши",
+      "description": "соседские",
+      "preview": "",
+      "category": 1,
+      "price": 100.0,
+      "created_at": null,
+      "updated_at": null
+    }
+  }
+]

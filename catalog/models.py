@@ -6,9 +6,9 @@ class Category(models.Model):
     description = models.TextField(verbose_name="Описание", blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Категория'
-        verbose_name_plural = 'Категории'
-        ordering = ('id', )
+        verbose_name = "Категория"
+        verbose_name_plural = "Категории"
+        ordering = ("id",)
 
     def __str__(self):
         return self.name
@@ -33,17 +33,10 @@ class Product(models.Model):
     # manufactured_at = models.DateField(verbose_name='Дата производства продукта', blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Продукт'
-        verbose_name_plural = 'Продукты'
-        ordering = ('id',)
+        verbose_name = "Продукт"
+        verbose_name_plural = "Продукты"
+        ordering = ("id",)
 
     def __str__(self):
         return self.name
 
-    # Наименование, Описание, Изображение (превью), Категория, Цена за покупку
-    # Дата создания (записи в БД), Дата последнего изменения (записи в БД)
-
-    # Наименование, Описание
-
-# Поля «Дата создания» и «Дата последнего изменения» стали стандартом для моделей.
-# Их общепринятые названия — created_at и updated_at соответственно.
