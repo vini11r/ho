@@ -14,8 +14,10 @@
                 <img src="{{ blog.preview | media_filter }}" height="400">
                 <div class="card-body">
                     <a class="btn btn-primary" href="{% url 'blog:blog_detail' blog.pk%}" role="button">Подробнее</a>
-                    <a class="btn btn-primary" href="{% url 'blog:blog_update' blog.pk%}" role="button">Редактировать</a>
+                    <a class="btn btn-primary" href="{% url 'blog:blog_update' blog.pk%}"
+                       role="button">Редактировать</a>
                 </div>
+                <a class="btn btn-primary" href="{% url 'blog:blog_delete' blog.pk%}" role="button">Удалить</a>
             </div>
         </div>
         {% endfor %}
