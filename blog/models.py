@@ -10,7 +10,7 @@ class Blog(models.Model):
     published = models.BooleanField(verbose_name="Признак публикации", default=True)
     count_views = models.IntegerField(verbose_name="Количество просмотров", default=0)
 
-    def save(self, *args, **kwargs):
+    def __str__(self):
         return self.title
 
     class Meta:

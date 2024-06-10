@@ -8,14 +8,17 @@
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">{{ object.title | capfirst }} ({{object.slug}})</h4>
                 </div>
-                <img src="{{ product.preview | media_filter }}">
+                {% if object.photo %}
+                <img src="{{ blog.preview | media_filter }}" onError="this.src= '/static/images/plug_blog.png'"
+                     class="card-img-top" alt="photo">>
+                {% endif %}
                 <div class="card-body">
                     <p class="text-md-start"> {{object.content | capfirst}}</p>
                 </div>
                 <p align="left">
                     Количество просмотров: {{object.count_views}}
                 </p>
-                 <a class="btn btn-primary" href="{% url 'blog:blog_list' %}" role="button">Назад</a>
+                <a class="btn btn-primary" href="{% url 'blog:blog_list' %}" role="button">Назад</a>
             </div>
         </div>
     </div>
