@@ -42,7 +42,7 @@ class BlogCreateView(CreateView):
 
 class BlogUpdateView(UpdateView):
     model = Blog
-    fields = '__all__'
+    fields = ('title', 'content', 'preview', 'published', 'created_at', )
 
     # success_url = reverse_lazy('blog:blog_update')
 
