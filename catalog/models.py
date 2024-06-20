@@ -28,8 +28,8 @@ class Product(models.Model):
         related_name="products",
     )
     price = models.FloatField(verbose_name="Цена продукта")
-    created_at = models.DateField(verbose_name="Дата создания", blank=True, null=True)
-    updated_at = models.DateField(verbose_name="Дата изменения", blank=True, null=True)
+    created_at = models.DateField(auto_now_add=True, verbose_name="Дата создания", blank=True, null=True)
+    updated_at = models.DateField(verbose_name="Дата изменения", auto_now_add=True, blank=True, null=True)
     # manufactured_at = models.DateField(verbose_name='Дата производства продукта', blank=True, null=True)
 
     class Meta:

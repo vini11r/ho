@@ -13,7 +13,9 @@
                     <p class="text-md-start">Описание: {{object.description | truncatechars:100 | capfirst}}</p>
                     <p class="text-md-start">Категория: {{object.category | title}}</p>
                     <p class="text-md-start">Цена: {{object.price}} руб. </p>
-                    <a class="btn btn-primary" href="{% url 'catalog:product_list' %}" role="button">Назад</a>
+                    <a class="btn btn-primary mb-3" href="{% url 'catalog:product_list' %}" role="button">Назад</a>
+                    <a class="btn btn-primary mb-3" href="{% url 'catalog:product_update' product.pk %}" role="button">Редактировать</a>
+                    <a class="btn btn-primary " href="{% url 'catalog:product_delete' product.pk %}" role="button">Удалить</a>
                 </div>
             </div>
         </div>
