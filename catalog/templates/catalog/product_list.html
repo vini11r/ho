@@ -9,7 +9,8 @@
         <div class="col-3">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">{{ product.name | capfirst }}</h4>
+                    <h4 class="my-0 font-weight-normal">{{ product.name | capfirst }} </h4>
+                    <h4 class="my-0 font-weight-normal"> Версия: {{product.version}} </h4>
                 </div>
                 <img src="{{ product.preview | media_filter }}" height="400">
                 <div class="card-body">

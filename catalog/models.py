@@ -30,6 +30,7 @@ class Product(models.Model):
     price = models.FloatField(verbose_name="Цена продукта")
     created_at = models.DateField(auto_now_add=True, verbose_name="Дата создания", blank=True, null=True)
     updated_at = models.DateField(verbose_name="Дата изменения", auto_now_add=True, blank=True, null=True)
+
     # manufactured_at = models.DateField(verbose_name='Дата производства продукта', blank=True, null=True)
 
     class Meta:
@@ -39,3 +40,18 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class VersionProduct(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name="Продукт")
+    number_version = models.SmallIntegerField(default=0, verbose_name="Версия продукта")
+    name_version = models.CharField(max_length=200, verbose_name="Название версии", blank=True, null=True)
+    is_active = models.BooleanField(default=True, verbose_name="Версия активна")
+
+    class Meta:
+        verbose_name = "Версия продукта"
+        verbose_name_plural = "Версии продуктов"
+        ordering = ("number_version",)
+
+    def __str__(self):
+        return f"{self.name_version} - {self.number_version}"

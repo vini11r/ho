@@ -1,10 +1,20 @@
 from django.core.exceptions import ValidationError
-from django.forms import ModelForm
+from django.forms import ModelForm, BooleanField
 
-from catalog.models import Product
+from catalog.models import Product, VersionProduct
 
 
-class ProductForm(ModelForm):
+class StyleFormMixin:
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for fild_name, fild in self.fields.items():
+            if isinstance(fild, BooleanField):
+                fild.widget.attrs['class'] = 'form-check-input'
+            else:
+                fild.widget.attrs['class'] = 'form-control'
+
+
+class ProductForm(StyleFormMixin, ModelForm):
     forbidden_words = ["казино", "криптовалюта", "крипта", "биржа", "дешево", "бесплатно", "обман", "полиция", "радар"]
 
     class Meta:
@@ -24,3 +34,9 @@ class ProductForm(ModelForm):
             if word in description.lower():
                 raise ValidationError("Нельзя использовать запрещенные слова")
         return description
+
+
+class VersionForm(StyleFormMixin, ModelForm):
+    class Meta:
+        model = VersionProduct
+        fields = "__all__"
