@@ -1,4 +1,7 @@
+
 from django.db import models
+
+from users.models import User
 
 
 class Category(models.Model):
@@ -30,6 +33,7 @@ class Product(models.Model):
     price = models.FloatField(verbose_name="Цена продукта")
     created_at = models.DateField(auto_now_add=True, verbose_name="Дата создания", blank=True, null=True)
     updated_at = models.DateField(verbose_name="Дата изменения", auto_now_add=True, blank=True, null=True)
+    owner = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
     # manufactured_at = models.DateField(verbose_name='Дата производства продукта', blank=True, null=True)
 
