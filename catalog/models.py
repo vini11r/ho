@@ -34,6 +34,7 @@ class Product(models.Model):
     created_at = models.DateField(auto_now_add=True, verbose_name="Дата создания", blank=True, null=True)
     updated_at = models.DateField(verbose_name="Дата изменения", auto_now_add=True, blank=True, null=True)
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
+    publisher = models.BooleanField(default=False, verbose_name="Опубликовать")
 
     # manufactured_at = models.DateField(verbose_name='Дата производства продукта', blank=True, null=True)
 
@@ -41,6 +42,11 @@ class Product(models.Model):
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
         ordering = ("id",)
+        permissions = [
+            ('is_published', 'Подтверждает публикацию'),
+            ('is_description', 'Может менять описание'),
+            ('is_category', 'Может менять категорию')
+        ]
 
     def __str__(self):
         return self.name
