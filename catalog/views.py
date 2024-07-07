@@ -19,11 +19,6 @@ class ProductListView(ListView):
         return context
 
 
-# def home(requests):
-#     catalog = Product.objects.all()
-#     context = {"products": catalog}
-#     return render(requests, "product_list.html", context)
-
 class ProductDetailsView(DetailView):
     model = Product
 
@@ -41,14 +36,6 @@ class ProductDetailsView(DetailView):
 class ContactTemplateView(TemplateView):
     template_name = "catalog/contacts_template.html"
 
-
-# def contacts(requests):
-#     return render(requests, "catalog/contacts_template.html")
-
-# def product_info(requests, pk):
-#     product = get_object_or_404(Product, pk=pk)
-#     context = {'product': product}
-#     return render(requests, 'product_detail.html', context)
 
 class ProductCreateView(CreateView, LoginRequiredMixin):
     model = Product
