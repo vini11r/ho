@@ -6,6 +6,7 @@ from django.views.generic import ListView, DetailView, TemplateView, CreateView,
 
 from catalog.forms import ProductForm, VersionForm, ProductModeratorForm
 from catalog.models import Product, VersionProduct
+from catalog.sevices import get_product_from_cache
 
 
 class ProductListView(ListView):
@@ -17,6 +18,9 @@ class ProductListView(ListView):
             version = VersionProduct.objects.filter(is_active=True, product_id=object.pk).first()
             object.version = version
         return context
+
+    def get_queryset(self):
+        return get_product_from_cache()
 
 
 class ProductDetailsView(DetailView):
